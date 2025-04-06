@@ -1,8 +1,10 @@
 import React from 'react';
 import Button from './Button';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 function Getstarted() {
   const steps = [1, 2, 3];
+  const navigate = useNavigate();
 
   const incidentData = [
     {
@@ -70,7 +72,7 @@ function Getstarted() {
       {/* Button */}
       <div className="flex justify-center mt-12">
         <Button 
-          text="Get started" 
+          text="Get started" onClick={()=> navigate('/incidenttype')}
           className="bg-button text-white text-xs md:text-[12px] px-5 md:px-7 py-2" 
         />
       </div>
