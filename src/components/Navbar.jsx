@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Profile from './Profile';
 import { Menu, X } from 'lucide-react'; // using Lucide icons
 import Button from './Button';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locations = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -13,9 +14,24 @@ function Navbar() {
     isActive
       ? 'border-b-2 border-black text-black font-semi-bold' : 'text-secondary text-[14px] font-ones';
 
+      // create pate titles
+
+      const pageTitles ={
+    '/dashboard': 'Dashboard',
+    '/incidents': 'Incidents',
+    '/locations': 'Locations',
+    '/activities': 'Activities',
+    '/documents': 'Documents',
+    '/cypher-ai': 'Cypher AI',
+
+      };
+
+
+const currentTitle = pageTitles[locations.pathname] || 'Dashboard';
+
   return (
     <div className='bg-[#E4E4E780]'>
-      <div className='max-w-7xl px-4 py-3 mx-auto flex justify-between items-center'>
+      <div className='max-w-7xl px-4 py-3 mx-auto flex justify-between items-center border-b border-gray-300'>
         {/* Logo */}
         <div>
           <NavLink to="/">
@@ -49,9 +65,20 @@ function Navbar() {
         
       </div>
 
-      <div className='max-w-7xl mx-auto py-5 flex justify-between'>
-        <div>left</div>
-        <div><Button/></div>
+      <div className='max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 justify-between'>
+        <div>
+            <span className='text-secondary font-ones text-[12px]'>Welcome back</span>
+            {/* h2 tag text should change depending on active link */}
+            <h2 className='font-bold text-2xl font-ones'>{currentTitle}</h2>  
+
+        </div>
+
+        <div className='flex flex-wrap gap-3'>
+            
+            <Button text='Search incident' className='bg-white text-secondary text-[12px] px-8'/>
+            <Button text='Sort By:Date modified' className='bg-white text-secondary text-[12px]'/>
+            <Button text='Cypher AI' className='bg-button text-white text-[12px]'/>
+            </div>
       </div>
 
       {/* Mobile Menu */}
