@@ -5,6 +5,7 @@ import Incidents from './pages/Incidents';
 import Locations from './pages/Locations';
 import Activities from './pages/Activities';
 import Documents from './pages/Documents';
+import Getstarted from './components/Getstarted';
 import Cypher from './pages/Cypher';
 import './App.css'
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/incidents" element={<Incidents/>} />
         <Route path="/locations" element={<Locations/>} />
+        <Route path='getstarted' element={<Getstarted/>}/>
         <Route path="/activities" element={<Activities/>} />
         <Route path="/documents" element={<Documents/>} />
         <Route path="/cypher-ai" element={<Cypher/>} />

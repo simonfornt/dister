@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom'; 
 import Profile from './Profile';
 import { Menu, X } from 'lucide-react'; // using Lucide icons
 import Button from './Button';
@@ -7,6 +7,9 @@ import Button from './Button';
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const locations = useLocation();
+  const navigate = useNavigate();
+
+
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -77,7 +80,13 @@ const currentTitle = pageTitles[locations.pathname] || 'Dashboard';
             
             <Button text='Search incident' className='bg-white text-secondary text-[12px] px-8'/>
             <Button text='Sort By:Date modified' className='bg-white text-secondary text-[12px]'/>
-            <Button text='Cypher AI' className='bg-button text-white text-[12px]'/>
+            {locations.pathname === '/incidents' ? (
+                <Button text='New Incident' className='bg-button text-white text-[12px]'
+                onClick={() => navigate('/getstarted')}
+                />
+            ) : (
+                <Button text='Cypher AI' className='bg-button text-white text-[12px]'/>
+            ) }
             </div>
       </div>
 
