@@ -6,7 +6,7 @@ function Button({ text = 'Click Me', className = '', onClick }) {
     <div>
       <button
         onClick={onClick}
-        className={`px-4 py-2 rounded-md font-medium bg-blue-600 font-ones hover:shadow-lg shadow-orange-700/60 transition duration-300 ${className}`}
+        className={`px-4 py-2 rounded-md font-medium bg-blue-600 font-ones cursor-pointer hover:shadow-lg shadow-orange-700/60 transition duration-300 ${className}`}
       >
         {text}
       </button>

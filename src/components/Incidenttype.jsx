@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'lucide-react';
+import Button from './Button';
 
 const incidentTypes = [
   { id: 1, name: 'Avalanche', icon: 'img/icon1.svg' },
@@ -41,6 +41,10 @@ function Incidenttype() {
             <p className="text-base font-medium text-secondary font-ones text-[14px] group-hover:text-white">{incident.name}</p>
           </div>
         ))}
+      </div>
+
+      <div className='flex justify-center mt-15'>
+        <Button text='Next Step' className='bg-button text-white text-sm'/>
       </div>
     </div>
   );
