@@ -1,4 +1,5 @@
 import React from 'react'
+import Chat from './Chat';
 
 function Card() {
 
@@ -63,15 +64,21 @@ function Card() {
       <img src={card.logo} alt="" className='absolute top-3 right-3 ' />
 
      <div className='py-4'>
-     <h2 className='font-[700]'>{card.title}</h2>
-      <p className='text-[#71717A]'>{card.des}</p>
-      <h4 className='font-bold mt-2'>{card.price}</h4>
+     <h2 className='font-[700] font-ones text-primary'>{card.title}</h2>
+      <p className='text-secondary font-ones'>{card.des}</p>
+      <h4 className='font-bold mt-2 font-ones'>{card.price}</h4>
      </div>
 
      </div>
  ))}
 
 </div>
+
+
+ <div className='flex justify-end'>
+ <Chat/>
+ </div>
+
       </div>
     
     </>

@@ -1,4 +1,5 @@
-import Card from './components/Card'
+import Card from './components/Card';
+import Chat from './components/Chat';
 import './App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
      <Card/>
+     
     
     </>
   )
