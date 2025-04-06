@@ -76,6 +76,9 @@ const currentTitle = pageTitles[locations.pathname] || 'Dashboard';
 
         </div>
 
+
+        {/*  hard funcationality mama !! */}
+
         <div className='flex flex-wrap gap-3'>
             
             <Button text='Search incident' className='bg-white text-secondary text-[12px] px-8'/>
@@ -88,6 +91,10 @@ const currentTitle = pageTitles[locations.pathname] || 'Dashboard';
                 <Button text='Cypher AI' className='bg-button text-white text-[12px]'/>
             ) }
             </div>
+
+
+
+            
       </div>
 
       {/* Mobile Menu */}
