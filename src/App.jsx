@@ -22,6 +22,7 @@ function App() {
       <Navbar/>
       <Routes>
       <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path='/' element={<Dashboard/>}/>
         <Route path="/incidents" element={<Incidents/>} />
         <Route path="/locations" element={<Locations/>} />
         <Route path='getstarted' element={<Getstarted/>}/>
