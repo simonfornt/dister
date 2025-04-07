@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate, Navigate } from 'react-router-dom';
+
 import Button from './Button';
 
 const incidentTypes = [
@@ -22,6 +24,8 @@ const incidentTypes = [
 ];
 
 function Incidenttype() {
+  const navigate = useNavigate();
+
   return (
     <div className="max-w-[753px] mx-auto px-4">
       <div className="py-9">
@@ -34,7 +38,7 @@ function Incidenttype() {
         {incidentTypes.map((incident) => (
           <div
             key={incident.id}
-            className="flex items-center gap-2 py-5 px-4  md:w-[170px] h-[50px] bg-slate-200 hover:bg-button
+            className="flex items-center gap-2 py-5 px-4  md:w-[170px] h-[50px] bg-[#F4F4F5] hover:bg-button
             cursor-pointer  rounded-lg transition duration-200 group"
           >
             <img src={incident.icon} alt={incident.name} className="w-6 h-6" />
@@ -44,7 +48,7 @@ function Incidenttype() {
       </div>
 
       <div className='flex justify-center mt-15'>
-        <Button text='Next Step' className='bg-button text-white text-sm'/>
+        <Button onClick={() => navigate('/titlenDes')} text='Next Step' className='bg-button text-white text-sm'/>
       </div>
     </div>
   );
