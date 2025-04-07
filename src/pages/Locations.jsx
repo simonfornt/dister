@@ -77,9 +77,9 @@ function Locations() {
           {/* Locations */}
           <div className="py-10 border-b border-slate-300">
             <h4 className="my-3 font-ones font-semibold text-sm">Locations</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
               {locationsData.map((location) => (
-                <div key={location.id}>
+                <div key={location.id} className='transform transition duration-200 hover:scale-[1.03]'>
                   <img src={location.image} alt={location.title} className="w-full h-32 object-cover rounded-md" />
                   <div>
                     <h2 className="font-ones text-primary font-bold">{location.title}</h2>
@@ -98,7 +98,7 @@ function Locations() {
               <p className="text-sm font-semibold underline font-ones">See all</p>
             </div>
             {activityData.map((activity, index) => (
-              <div key={index} className="flex items-center gap-4 bg-[#F4F4F5] px-3 py-3 mb-3 rounded-lg">
+              <div key={index} className="flex items-center gap-4 bg-[#F4F4F5] px-3 py-3 mb-3 rounded-lg transform transition duration-200 hover:scale-[1.03]">
                 <img src={activity.image} alt={activity.name} className="w-28 h-20 object-cover rounded" />
                 <div>
                   <h2 className="text-lg font-ones font-bold">{activity.name}</h2>
@@ -118,7 +118,7 @@ function Locations() {
               <p className="text-sm font-semibold underline font-ones">See all</p>
             </div>
             {activityData.map((doc, index) => (
-              <div key={index} className="flex items-center gap-4 bg-slate-100 px-3 py-3 mb-3 rounded-lg">
+              <div key={index} className="flex items-center gap-4 bg-slate-100 px-3 py-3 mb-3 rounded-lg transform transition duration-200 hover:scale-[1.03]">
                 <img src={doc.image} alt={doc.name} className="w-28 h-20 object-cover rounded" />
                 <div>
                   <h2 className="text-lg font-ones font-bold">{doc.name}</h2>

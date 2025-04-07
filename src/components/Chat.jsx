@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 function Chat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ function Chat() {
 
     // Simulate bot reply
     setTimeout(() => {
-      setMessages((prev) => [...prev, { from: 'bot', text: 'Got it! 👌' }]);
+      setMessages((prev) => [...prev, { from: 'bot', text: 'Cypher AI Got it! 👌' }]);
     }, 800);
 
     setInput('');
@@ -41,7 +42,7 @@ function Chat() {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-2 bg-[#F26922] text-white rounded-t-lg">
             <h2 className="font-semibold font-ones">Chat with Cypher</h2>
-            <button onClick={() => setIsOpen(false)} className="text-xl">&times;</button>
+            <button onClick={() => setIsOpen(false)} className="text-xl cursor-pointer">&times;</button>
           </div>
 
           {/* Messages */}
@@ -72,12 +73,10 @@ function Chat() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyPress}
             />
-            <button
-              className="bg-button text-white px-4 py-2 rounded-2xl text-sm font-ones"
-              onClick={handleSend}
-            >
-              Send
-            </button>
+
+            <Button className='bg-button text-white text-sm '/>
+
+
           </div>
 
           {/* Icons */}
