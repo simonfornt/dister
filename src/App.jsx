@@ -8,6 +8,7 @@ import Documents from './pages/Documents';
 import Getstarted from './components/Getstarted';
 import Incidenttype from './components/Incidenttype';
 import TitlenDes from './components/TitlenDes';
+import Map from './components/Map';
 import Cypher from './pages/Cypher';
 
 import './App.css'
@@ -26,10 +27,12 @@ function App() {
         <Route path='getstarted' element={<Getstarted/>}/>
         <Route path='incidenttype' element={<Incidenttype/>}/>
         <Route path='titlendes' element={<TitlenDes/>}/>
+        <Route path='map' element={<Map/>}/>
         <Route path="/activities" element={<Activities/>} />
         <Route path="/documents" element={<Documents/>} />
         <Route path="/cypher-ai" element={<Cypher/>} />
       </Routes>
+    
     </Router>
      
     
